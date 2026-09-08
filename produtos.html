@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos | Pata &amp; Companhia Petshop</title>
+  <meta name="description" content="Acessorios, racoes nao pereciveis e produtos de higiene e limpeza para caes e gatos.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!-- Acessibilidade: atalho para quem navega por teclado ou leitor de tela. -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteudo principal</a>
+
+<!-- Barra superior: relogio e situacao da loja atualizados por JavaScript. -->
+<div class="barra-info py-2">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>Rua das Acacias, 250 - Porto Alegre/RS | (51) 3000-1234</span>
+    <span>
+      <span data-relogio>Carregando horario...</span>
+      &ndash;
+      <span data-status-loja aria-live="polite">Verificando o expediente...</span>
+    </span>
+  </div>
+</div>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-petshop" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="imagens/logo.svg" width="150" height="50"
+             alt="Logotipo do petshop Pata e Companhia: uma pegada de cachorro amarela ao lado do nome da loja">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir e fechar o menu de navegacao">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-nav href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="servicos.html">Servicos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <section class="container my-5">
+    <h1 class="secao-titulo">Produtos</h1>
+    <p>Duas opcoes de cada uma das tres categorias da loja. Use os filtros ou a busca para encontrar o que precisa.</p>
+
+    <div class="row g-3 align-items-end mb-4">
+      <div class="col-12 col-lg-7">
+        <p class="mb-2 fw-semibold" id="rotulo-filtros">Filtrar por categoria</p>
+        <div class="btn-group flex-wrap" role="group" aria-labelledby="rotulo-filtros">
+          <button type="button" class="btn btn-outline-dark active" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button type="button" class="btn btn-outline-dark" data-filtro="acessorios" aria-pressed="false">Acessorios</button>
+          <button type="button" class="btn btn-outline-dark" data-filtro="racoes" aria-pressed="false">Racoes</button>
+          <button type="button" class="btn btn-outline-dark" data-filtro="higiene" aria-pressed="false">Higiene e limpeza</button>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5">
+        <label class="form-label fw-semibold" for="busca-produto">Buscar pelo nome</label>
+        <input type="search" class="form-control" id="busca-produto" placeholder="Ex.: racao, coleira, shampoo">
+      </div>
+    </div>
+
+    <p class="text-muted" data-contador aria-live="polite">6 produtos encontrados.</p>
+
+    <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-4" data-produto data-categoria="acessorios" data-nome="Coleira Peitoral Ajustavel">
+          <article class="card card-produto h-100 shadow-sm">
+            <img src="imagens/coleira.svg" class="card-img-top" alt="Coleira peitoral de nylon acolchoado, com regulagem no peito e no pescoco, sobre fundo amarelo">
+            <div class="card-body d-flex flex-column">
+              <span class="badge selo-categoria align-self-start mb-2">Acessorios</span>
+              <h3 class="h5 card-title">Coleira Peitoral Ajustavel</h3>
+              <p class="card-text flex-grow-1">Nylon acolchoado, com regulagem no peito e no pescoco. Acompanha guia de 1,20 m. Tamanhos P, M e G.</p>
+              <p class="preco mb-0">R$ 79,90</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" data-produto data-categoria="acessorios" data-nome="Cama Redonda Confort">
+          <article class="card card-produto h-100 shadow-sm">
+            <img src="imagens/cama-pet.svg" class="card-img-top" alt="Cama redonda acolchoada de 60 cm em tecido suede, sobre fundo laranja">
+            <div class="card-body d-flex flex-column">
+              <span class="badge selo-categoria align-self-start mb-2">Acessorios</span>
+              <h3 class="h5 card-title">Cama Redonda Confort</h3>
+              <p class="card-text flex-grow-1">60 cm em tecido suede, enchimento em fibra siliconada e capa removivel lavavel. Caes e gatos de pequeno e medio porte.</p>
+              <p class="preco mb-0">R$ 149,00</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" data-produto data-categoria="racoes" data-nome="Racao Premium Caes Adultos 15 kg">
+          <article class="card card-produto h-100 shadow-sm">
+            <img src="imagens/racao-caes.svg" class="card-img-top" alt="Pacote de racao seca premium para caes adultos, sabor frango e arroz, sobre fundo verde">
+            <div class="card-body d-flex flex-column">
+              <span class="badge selo-categoria align-self-start mb-2">Racoes</span>
+              <h3 class="h5 card-title">Racao Premium Caes Adultos 15 kg</h3>
+              <p class="card-text flex-grow-1">Sabor frango e arroz, proteina de alta digestibilidade, vitaminas e minerais. Caes adultos de todos os portes.</p>
+              <p class="preco mb-0">R$ 219,90</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" data-produto data-categoria="racoes" data-nome="Racao Premium Gatos Castrados 3 kg">
+          <article class="card card-produto h-100 shadow-sm">
+            <img src="imagens/racao-gatos.svg" class="card-img-top" alt="Pacote de racao seca premium para gatos castrados, sabor salmao, sobre fundo verde claro">
+            <div class="card-body d-flex flex-column">
+              <span class="badge selo-categoria align-self-start mb-2">Racoes</span>
+              <h3 class="h5 card-title">Racao Premium Gatos Castrados 3 kg</h3>
+              <p class="card-text flex-grow-1">Sabor salmao, teor reduzido de gordura e controle de pH urinario. Gatos castrados a partir de 12 meses.</p>
+              <p class="preco mb-0">R$ 98,50</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" data-produto data-categoria="higiene" data-nome="Tapete Higienico 30 unidades">
+          <article class="card card-produto h-100 shadow-sm">
+            <img src="imagens/tapete-higienico.svg" class="card-img-top" alt="Pacote com trinta tapetes higienicos de 80 por 60 centimetros, sobre fundo azul claro">
+            <div class="card-body d-flex flex-column">
+              <span class="badge selo-categoria align-self-start mb-2">Higiene e limpeza</span>
+              <h3 class="h5 card-title">Tapete Higienico 30 unidades</h3>
+              <p class="card-text flex-grow-1">80 x 60 cm, camada de gel super absorvente, controle de odor e base impermeavel antivazamento.</p>
+              <p class="preco mb-0">R$ 64,90</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4" data-produto data-categoria="higiene" data-nome="Shampoo Neutro Pet 500 ml">
+          <article class="card card-produto h-100 shadow-sm">
+            <img src="imagens/shampoo.svg" class="card-img-top" alt="Frasco de 500 mililitros de shampoo neutro para caes e gatos, sobre fundo lilas">
+            <div class="card-body d-flex flex-column">
+              <span class="badge selo-categoria align-self-start mb-2">Higiene e limpeza</span>
+              <h3 class="h5 card-title">Shampoo Neutro Pet 500 ml</h3>
+              <p class="card-text flex-grow-1">pH neutro para caes e gatos, sem sal e sem corantes. Limpa sem ressecar a pele e pode ser usado semanalmente.</p>
+              <p class="preco mb-0">R$ 42,00</p>
+            </div>
+          </article>
+        </div>
+    </div>
+
+    <p class="alert alert-warning d-none mt-3" data-sem-resultado role="status">
+      Nenhum produto corresponde ao filtro escolhido. Tente outra categoria ou limpe a busca.
+    </p>
+  </section>
+</main>
+
+<footer class="rodape mt-5 py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2 class="h5">Pata &amp; Companhia Petshop</h2>
+        <p class="mb-1">CNPJ 12.345.678/0001-90</p>
+        <p class="mb-1">Rua das Acacias, 250 - Bairro Petropolis</p>
+        <p class="mb-0">Porto Alegre/RS - CEP 90000-000</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Atendimento</h2>
+        <p class="mb-1">Segunda a sexta: 8h as 19h</p>
+        <p class="mb-1">Sabado: 8h as 14h</p>
+        <p class="mb-1">Telefone: (51) 3000-1234</p>
+        <p class="mb-0"><a href="mailto:contato@patacompanhia.com.br">contato@patacompanhia.com.br</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Navegacao</h2>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Servicos</a></li>
+          <li><a href="agendamento.html">Agendamento</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="mb-1 small">Precos e condicoes validos apenas para este trabalho academico. Imagens meramente ilustrativas.</p>
+    <p class="mb-0 small">&copy; <span data-ano>2026</span> Pata &amp; Companhia Petshop. Projeto academico da disciplina Fundamentos de Sistemas Web - PUCRS. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/produtos.js"></script>
+</body>
+</html>

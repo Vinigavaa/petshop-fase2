@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Tele-busca">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3D348B"/>
+      <stop offset="100%" stop-color="#7678ED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#g)"/>
+  <g transform="translate(980,150) scale(1.6)" fill="#FFFFFF" opacity="0.18">
+    <circle cx="-42" cy="-18" r="17"/>
+    <circle cx="-14" cy="-34" r="18"/>
+    <circle cx="16" cy="-34" r="18"/>
+    <circle cx="44" cy="-18" r="17"/>
+    <ellipse cx="0" cy="24" rx="46" ry="36"/>
+  </g>
+  <g transform="translate(180,380) scale(1.1)" fill="#FFFFFF" opacity="0.14">
+    <circle cx="-42" cy="-18" r="17"/>
+    <circle cx="-14" cy="-34" r="18"/>
+    <circle cx="16" cy="-34" r="18"/>
+    <circle cx="44" cy="-18" r="17"/>
+    <ellipse cx="0" cy="24" rx="46" ry="36"/>
+  </g>
+  <text x="80" y="230" font-family="Georgia, serif" font-size="62" font-weight="bold" fill="#FFFFFF">Tele-busca</text>
+  <text x="80" y="292" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#FFFFFF" opacity="0.92">Buscamos e devolvemos o seu pet em casa</text>
+</svg>

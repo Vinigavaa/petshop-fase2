@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Pata &amp; Companhia Petshop</title>
+  <meta name="description" content="Endereco, telefones, e-mails e horarios de atendimento do petshop.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!-- Acessibilidade: atalho para quem navega por teclado ou leitor de tela. -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteudo principal</a>
+
+<!-- Barra superior: relogio e situacao da loja atualizados por JavaScript. -->
+<div class="barra-info py-2">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>Rua das Acacias, 250 - Porto Alegre/RS | (51) 3000-1234</span>
+    <span>
+      <span data-relogio>Carregando horario...</span>
+      &ndash;
+      <span data-status-loja aria-live="polite">Verificando o expediente...</span>
+    </span>
+  </div>
+</div>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-petshop" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="imagens/logo.svg" width="150" height="50"
+             alt="Logotipo do petshop Pata e Companhia: uma pegada de cachorro amarela ao lado do nome da loja">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir e fechar o menu de navegacao">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-nav href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="servicos.html">Servicos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <section class="container my-5">
+    <h1 class="secao-titulo">Contato</h1>
+
+    <div class="row g-4 mt-1">
+      <div class="col-md-6">
+        <article class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Loja</h2>
+            <address class="mb-0">
+              Pata &amp; Companhia Petshop<br>
+              Rua das Acacias, 250 - Bairro Petropolis<br>
+              Porto Alegre/RS - CEP 90000-000
+            </address>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6">
+        <article class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Telefones e e-mails</h2>
+            <ul class="list-unstyled mb-0">
+              <li>Loja: (51) 3000-1234</li>
+              <li>WhatsApp e agendamentos: (51) 99000-1234</li>
+              <li><a href="mailto:contato@patacompanhia.com.br">contato@patacompanhia.com.br</a></li>
+              <li><a href="mailto:agenda@patacompanhia.com.br">agenda@patacompanhia.com.br</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <h2 class="secao-titulo mt-5 mb-3">Horarios de atendimento</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered w-auto">
+        <caption>Horario de funcionamento da loja</caption>
+        <thead class="table-dark">
+          <tr><th scope="col">Dia</th><th scope="col">Horario</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Segunda a sexta</th><td>8h as 19h</td></tr>
+          <tr><th scope="row">Sabado</th><td>8h as 14h</td></tr>
+          <tr><th scope="row">Domingo e feriados</th><td>Fechado</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4">
+      Para marcar banho ou tosa use a pagina de
+      <a href="agendamento.html">agendamento</a>: o formulario ja calcula o valor
+      estimado e mostra os horarios livres da data escolhida.
+    </p>
+  </section>
+</main>
+
+<footer class="rodape mt-5 py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2 class="h5">Pata &amp; Companhia Petshop</h2>
+        <p class="mb-1">CNPJ 12.345.678/0001-90</p>
+        <p class="mb-1">Rua das Acacias, 250 - Bairro Petropolis</p>
+        <p class="mb-0">Porto Alegre/RS - CEP 90000-000</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Atendimento</h2>
+        <p class="mb-1">Segunda a sexta: 8h as 19h</p>
+        <p class="mb-1">Sabado: 8h as 14h</p>
+        <p class="mb-1">Telefone: (51) 3000-1234</p>
+        <p class="mb-0"><a href="mailto:contato@patacompanhia.com.br">contato@patacompanhia.com.br</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Navegacao</h2>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Servicos</a></li>
+          <li><a href="agendamento.html">Agendamento</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="mb-1 small">Precos e condicoes validos apenas para este trabalho academico. Imagens meramente ilustrativas.</p>
+    <p class="mb-0 small">&copy; <span data-ano>2026</span> Pata &amp; Companhia Petshop. Projeto academico da disciplina Fundamentos de Sistemas Web - PUCRS. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/comum.js"></script>
+
+</body>
+</html>

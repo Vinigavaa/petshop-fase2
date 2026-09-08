@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440" role="img" aria-label="Shampoo neutro">
+  <rect width="640" height="440" fill="#B8B8FF"/>
+  <g transform="translate(320,190) scale(1.5)" fill="#22225B" opacity="0.9">
+    <circle cx="-42" cy="-18" r="17"/>
+    <circle cx="-14" cy="-34" r="18"/>
+    <circle cx="16" cy="-34" r="18"/>
+    <circle cx="44" cy="-18" r="17"/>
+    <ellipse cx="0" cy="24" rx="46" ry="36"/>
+  </g>
+  <text x="320" y="380" font-family="Helvetica, Arial, sans-serif" font-size="30" text-anchor="middle" fill="#22225B">Shampoo neutro</text>
+</svg>

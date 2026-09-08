@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajuda | Pata &amp; Companhia Petshop</title>
+  <meta name="description" content="Funcionalidades do site, recursos de acessibilidade e ajustes realizados na Fase 2.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!-- Acessibilidade: atalho para quem navega por teclado ou leitor de tela. -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteudo principal</a>
+
+<!-- Barra superior: relogio e situacao da loja atualizados por JavaScript. -->
+<div class="barra-info py-2">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>Rua das Acacias, 250 - Porto Alegre/RS | (51) 3000-1234</span>
+    <span>
+      <span data-relogio>Carregando horario...</span>
+      &ndash;
+      <span data-status-loja aria-live="polite">Verificando o expediente...</span>
+    </span>
+  </div>
+</div>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-petshop" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="imagens/logo.svg" width="150" height="50"
+             alt="Logotipo do petshop Pata e Companhia: uma pegada de cachorro amarela ao lado do nome da loja">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir e fechar o menu de navegacao">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-nav href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="servicos.html">Servicos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <section class="container my-5">
+    <h1 class="secao-titulo">Ajuda</h1>
+    <p>Esta pagina descreve as funcionalidades do site, os ajustes feitos na Fase 2 e os recursos de acessibilidade.</p>
+
+    <h2 class="secao-titulo mt-4 mb-3">Paginas e funcionalidades</h2>
+    <dl class="row">
+      <dt class="col-sm-3">Inicio (index.html)</dt>
+      <dd class="col-sm-9">
+        Carrossel do Bootstrap com tres destaques que trocam sozinhos a cada 6 segundos, com
+        botoes de avancar, voltar e indicadores. Traz ainda os produtos em destaque e o resumo dos servicos.
+      </dd>
+
+      <dt class="col-sm-3">Produtos (produtos.html)</dt>
+      <dd class="col-sm-9">
+        Seis produtos, dois de cada categoria, em cartoes com imagem, descricao e valor.
+        Os botoes de categoria e o campo de busca filtram a lista pelo JavaScript, sem recarregar a pagina,
+        e o total de itens encontrados e anunciado em texto.
+      </dd>
+
+      <dt class="col-sm-3">Servicos (servicos.html)</dt>
+      <dd class="col-sm-9">
+        Descricao de banho, tosa e tele-busca e tabela de valores por porte do pet.
+      </dd>
+
+      <dt class="col-sm-3">Agendamento (agendamento.html)</dt>
+      <dd class="col-sm-9">
+        Formulario com dados do tutor (nome, CPF, endereco, CEP, telefone, e-mail e sexo),
+        dados do pet (nome, especie, raca, idade, porte e observacoes) e escolha do servico.
+        O atendimento pode ser tele-busca ou entrega do pet na loja. O calendario aceita apenas
+        datas dos proximos 60 dias, recusa domingos e monta a lista de horarios conforme o dia
+        (ate 18h de segunda a sexta e ate 13h no sabado). O valor estimado e recalculado a cada
+        alteracao e, ao confirmar, o site exibe um resumo com numero de protocolo.
+      </dd>
+
+      <dt class="col-sm-3">Contato (contato.html)</dt>
+      <dd class="col-sm-9">Endereco, telefones, e-mails e horarios de atendimento.</dd>
+
+      <dt class="col-sm-3">Ajuda (ajuda.html)</dt>
+      <dd class="col-sm-9">Esta pagina.</dd>
+    </dl>
+
+    <h2 class="secao-titulo mt-4 mb-3">Recursos dinamicos em JavaScript</h2>
+    <ul>
+      <li>Relogio na barra superior, atualizado a cada 30 segundos (funcao temporal).</li>
+      <li>Aviso automatico de loja aberta ou fechada, calculado pelo dia e hora do visitante.</li>
+      <li>Marcacao do link da pagina atual no menu e ano corrente no rodape.</li>
+      <li>Filtro de produtos por categoria e busca por nome.</li>
+      <li>Validacao do formulario, horarios dependentes da data, calculo do valor e resumo do agendamento.</li>
+    </ul>
+
+    <h2 class="secao-titulo mt-4 mb-3">Acessibilidade para deficientes visuais</h2>
+    <ul>
+      <li>Todas as imagens tem o atributo <code>alt</code> com audiodescricao do conteudo, e nao apenas o nome do arquivo.</li>
+      <li>Link "Pular para o conteudo principal", visivel ao navegar por teclado.</li>
+      <li>Estrutura semantica com <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code> e titulos em ordem.</li>
+      <li>Todos os campos do formulario tem <code>label</code> associado, e as mensagens de erro explicam o que corrigir.</li>
+      <li>Regioes que mudam sozinhas usam <code>aria-live</code>, para que o leitor de tela anuncie a alteracao.</li>
+      <li>Botoes com icone tem texto alternativo em <code>visually-hidden</code>, e o link da pagina atual usa <code>aria-current</code>.</li>
+      <li>Contraste reforcado no cabecalho, no rodape e na legenda do carrossel, com foco sempre visivel.</li>
+    </ul>
+
+    <h2 class="secao-titulo mt-4 mb-3">Ajustes feitos em relacao a Fase 1</h2>
+    <ul>
+      <li>Inclusao do Bootstrap 5 e de uma folha de estilo propria (<code>css/estilo.css</code>), com paleta e tipografia definidas.</li>
+      <li>Separacao do codigo em arquivos: paginas HTML, um CSS e tres arquivos JavaScript com responsabilidades distintas.</li>
+      <li>Menu convertido em barra de navegacao responsiva, com botao para telas pequenas.</li>
+      <li>Produtos e servicos reorganizados em cartoes e tabelas responsivas, no lugar das listas simples.</li>
+      <li>Nova pagina de agendamento, com o formulario de cliente e pet exigido nesta fase.</li>
+      <li>Textos alternativos reescritos como audiodescricao e adicao do link de pular conteudo.</li>
+      <li>Tabela de precos revisada: valores separados por porte do pet e acrescimo da tele-busca destacado,
+          o que evita a duplicidade de linhas usada na Fase 1.</li>
+      <li>Imagens convertidas para SVG, que ficam nitidas em qualquer tamanho de tela e carregam mais rapido.</li>
+    </ul>
+
+    <h2 class="secao-titulo mt-4 mb-3">Limites desta versao</h2>
+    <p class="mb-0">
+      O site e um front-end academico: nao ha servidor, banco de dados nem envio real de e-mails.
+      O agendamento e validado e resumido no proprio navegador, sem gravacao permanente.
+    </p>
+  </section>
+</main>
+
+<footer class="rodape mt-5 py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2 class="h5">Pata &amp; Companhia Petshop</h2>
+        <p class="mb-1">CNPJ 12.345.678/0001-90</p>
+        <p class="mb-1">Rua das Acacias, 250 - Bairro Petropolis</p>
+        <p class="mb-0">Porto Alegre/RS - CEP 90000-000</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Atendimento</h2>
+        <p class="mb-1">Segunda a sexta: 8h as 19h</p>
+        <p class="mb-1">Sabado: 8h as 14h</p>
+        <p class="mb-1">Telefone: (51) 3000-1234</p>
+        <p class="mb-0"><a href="mailto:contato@patacompanhia.com.br">contato@patacompanhia.com.br</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Navegacao</h2>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Servicos</a></li>
+          <li><a href="agendamento.html">Agendamento</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="mb-1 small">Precos e condicoes validos apenas para este trabalho academico. Imagens meramente ilustrativas.</p>
+    <p class="mb-0 small">&copy; <span data-ano>2026</span> Pata &amp; Companhia Petshop. Projeto academico da disciplina Fundamentos de Sistemas Web - PUCRS. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/comum.js"></script>
+
+</body>
+</html>

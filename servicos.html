@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicos | Pata &amp; Companhia Petshop</title>
+  <meta name="description" content="Banho e tosa com tele-busca ou entrega do pet na loja, com tabela de valores por porte.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!-- Acessibilidade: atalho para quem navega por teclado ou leitor de tela. -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteudo principal</a>
+
+<!-- Barra superior: relogio e situacao da loja atualizados por JavaScript. -->
+<div class="barra-info py-2">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>Rua das Acacias, 250 - Porto Alegre/RS | (51) 3000-1234</span>
+    <span>
+      <span data-relogio>Carregando horario...</span>
+      &ndash;
+      <span data-status-loja aria-live="polite">Verificando o expediente...</span>
+    </span>
+  </div>
+</div>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-petshop" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="imagens/logo.svg" width="150" height="50"
+             alt="Logotipo do petshop Pata e Companhia: uma pegada de cachorro amarela ao lado do nome da loja">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir e fechar o menu de navegacao">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-nav href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="servicos.html">Servicos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <section class="container my-5">
+    <h1 class="secao-titulo">Servicos</h1>
+    <p>
+      O petshop oferece banho e tosa, com agendamento previo. Voce escolhe entre
+      levar o pet ate a loja no horario marcado ou contratar a tele-busca.
+    </p>
+
+    <div class="row g-4 my-2">
+      <div class="col-md-6">
+        <article class="card h-100 shadow-sm">
+          <img src="imagens/banho-tosa.svg" class="card-img-top" style="height: 240px; object-fit: cover;"
+               alt="Ilustracao de um cao recebendo banho e tosa no petshop">
+          <div class="card-body">
+            <h2 class="h4">Banho e tosa</h2>
+            <p>
+              Banho com shampoo neutro, secagem, escovacao, limpeza de ouvidos e corte de
+              unhas. Duracao media de 1 hora. A tosa pode ser higienica ou na maquina e
+              leva cerca de 1 hora e 30 minutos.
+            </p>
+            <p class="mb-0">Produtos hipoalergenicos, sem sal e sem corantes.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6">
+        <article class="card h-100 shadow-sm">
+          <img src="imagens/tele-busca.svg" class="card-img-top" style="height: 240px; object-fit: cover;"
+               alt="Ilustracao do veiculo do petshop que faz a tele-busca do pet">
+          <div class="card-body">
+            <h2 class="h4">Tele-busca ou entrega no local</h2>
+            <p>
+              Na tele-busca buscamos e devolvemos o animal em casa, em veiculo proprio
+              com caixa de transporte, para enderecos ate 10 km da loja.
+            </p>
+            <p class="mb-0">
+              Na entrega no local, voce traz o pet no horario agendado e retira apos o
+              atendimento, sem custo adicional.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <h2 class="secao-titulo mt-5 mb-3">Tabela de valores</h2>
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <caption>Valores dos servicos por porte do pet. A tele-busca e cobrada a parte.</caption>
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Servico</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">Pequeno porte</th>
+            <th scope="col">Medio porte</th>
+            <th scope="col">Grande porte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Banho</th>
+            <td>Banho, secagem, escovacao, limpeza de ouvidos e corte de unhas.</td>
+            <td>R$ 55,00</td>
+            <td>R$ 75,00</td>
+            <td>R$ 95,00</td>
+          </tr>
+          <tr>
+            <th scope="row">Tosa</th>
+            <td>Tosa higienica ou na maquina, com acabamento em patas e focinho.</td>
+            <td>R$ 65,00</td>
+            <td>R$ 85,00</td>
+            <td>R$ 105,00</td>
+          </tr>
+          <tr>
+            <th scope="row">Banho e tosa</th>
+            <td>Os dois servicos no mesmo atendimento, com preco combinado.</td>
+            <td>R$ 99,00</td>
+            <td>R$ 119,00</td>
+            <td>R$ 139,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="h5">Acrescimo da tele-busca</h3>
+    <ul>
+      <li>Pequeno porte (ate 10 kg): R$ 25,00</li>
+      <li>Medio porte (11 a 25 kg): R$ 30,00</li>
+      <li>Grande porte (acima de 25 kg): R$ 35,00</li>
+    </ul>
+
+    <a class="btn btn-lg text-white" style="background-color: var(--verde);" href="agendamento.html">
+      Ir para o agendamento
+    </a>
+  </section>
+</main>
+
+<footer class="rodape mt-5 py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2 class="h5">Pata &amp; Companhia Petshop</h2>
+        <p class="mb-1">CNPJ 12.345.678/0001-90</p>
+        <p class="mb-1">Rua das Acacias, 250 - Bairro Petropolis</p>
+        <p class="mb-0">Porto Alegre/RS - CEP 90000-000</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Atendimento</h2>
+        <p class="mb-1">Segunda a sexta: 8h as 19h</p>
+        <p class="mb-1">Sabado: 8h as 14h</p>
+        <p class="mb-1">Telefone: (51) 3000-1234</p>
+        <p class="mb-0"><a href="mailto:contato@patacompanhia.com.br">contato@patacompanhia.com.br</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Navegacao</h2>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Servicos</a></li>
+          <li><a href="agendamento.html">Agendamento</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="mb-1 small">Precos e condicoes validos apenas para este trabalho academico. Imagens meramente ilustrativas.</p>
+    <p class="mb-0 small">&copy; <span data-ano>2026</span> Pata &amp; Companhia Petshop. Projeto academico da disciplina Fundamentos de Sistemas Web - PUCRS. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/comum.js"></script>
+
+</body>
+</html>

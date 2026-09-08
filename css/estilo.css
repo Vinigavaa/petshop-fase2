@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Pata & Companhia Petshop - estilos da Fase 2
+   Complementa o Bootstrap 5: paleta, tipografia e ajustes de acessibilidade.
+   ========================================================================== */
+
+:root {
+  --verde-escuro: #0f5257;
+  --verde: #1d7874;
+  --areia: #f7f3ec;
+  --amarelo: #f2c14e;
+  --texto: #232323;
+}
+
+body {
+  background-color: var(--areia);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, .fonte-titulo {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Link que leva direto ao conteudo, visivel apenas ao navegar por teclado.
+   Ajuda quem usa leitor de tela a pular o menu repetido em todas as paginas. */
+.pular-conteudo {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 1080;
+  background: var(--verde-escuro);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+}
+
+.pular-conteudo:focus {
+  left: 0;
+}
+
+/* Foco sempre visivel, inclusive sobre fundo escuro. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 2px;
+}
+
+.navbar-petshop {
+  background-color: var(--verde-escuro);
+}
+
+.navbar-petshop .nav-link {
+  color: #eaf6f5;
+}
+
+.navbar-petshop .nav-link:hover,
+.navbar-petshop .nav-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.navbar-petshop .nav-link.ativo {
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 3px solid var(--amarelo);
+}
+
+.barra-info {
+  background-color: var(--verde);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.carousel-item img {
+  height: 380px;
+  object-fit: cover;
+}
+
+/* Faixa atras da legenda para garantir contraste sobre a imagem. */
+.carousel-caption {
+  background: rgba(15, 82, 87, 0.78);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.card-produto img {
+  height: 220px;
+  object-fit: cover;
+  background-color: #fff;
+}
+
+.card-produto .preco {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+}
+
+.selo-categoria {
+  background-color: var(--amarelo);
+  color: #4a3500;
+  font-weight: 600;
+}
+
+.secao-titulo {
+  border-left: 6px solid var(--verde);
+  padding-left: 0.75rem;
+}
+
+.rodape {
+  background-color: var(--verde-escuro);
+  color: #dff1ef;
+}
+
+.rodape a {
+  color: #fff;
+}
+
+.status-aberto {
+  color: #063;
+  font-weight: 600;
+}
+
+.status-fechado {
+  color: #8a1c1c;
+  font-weight: 600;
+}
+
+@media (max-width: 575.98px) {
+  .carousel-item img {
+    height: 260px;
+  }
+
+  .carousel-caption {
+    font-size: 0.85rem;
+  }
+}

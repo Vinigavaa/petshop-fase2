@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agendamento | Pata &amp; Companhia Petshop</title>
+  <meta name="description" content="Cadastro do cliente e do pet, escolha do servico e agendamento com tele-busca ou entrega na loja.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!-- Acessibilidade: atalho para quem navega por teclado ou leitor de tela. -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteudo principal</a>
+
+<!-- Barra superior: relogio e situacao da loja atualizados por JavaScript. -->
+<div class="barra-info py-2">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>Rua das Acacias, 250 - Porto Alegre/RS | (51) 3000-1234</span>
+    <span>
+      <span data-relogio>Carregando horario...</span>
+      &ndash;
+      <span data-status-loja aria-live="polite">Verificando o expediente...</span>
+    </span>
+  </div>
+</div>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-petshop" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="imagens/logo.svg" width="150" height="50"
+             alt="Logotipo do petshop Pata e Companhia: uma pegada de cachorro amarela ao lado do nome da loja">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir e fechar o menu de navegacao">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-nav href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="servicos.html">Servicos</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <section class="container my-5">
+    <h1 class="secao-titulo">Agendamento de banho e tosa</h1>
+    <p>
+      Preencha os dados do tutor e do pet, escolha o servico e a forma de atendimento.
+      Os campos marcados com asterisco sao obrigatorios. O valor estimado e calculado
+      automaticamente enquanto voce preenche o formulario.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <!-- novalidate: a validacao visual fica a cargo do Bootstrap e do JavaScript. -->
+        <form id="form-agendamento" class="needs-validation row g-3" novalidate>
+
+          <fieldset class="col-12">
+            <legend class="h4 secao-titulo">Dados do tutor</legend>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="nome">Nome completo *</label>
+                <input type="text" class="form-control" id="nome" name="nome"
+                       placeholder="Ex.: Maria de Souza" required minlength="5">
+                <div class="invalid-feedback">Informe o nome completo, com pelo menos 5 letras.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="cpf">CPF *</label>
+                <input type="text" class="form-control" id="cpf" name="cpf"
+                       placeholder="000.000.000-00" required
+                       pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+                       aria-describedby="ajuda-cpf">
+                <div id="ajuda-cpf" class="form-text">Somente numeros ou no formato 000.000.000-00.</div>
+                <div class="invalid-feedback">Informe um CPF valido, com 11 numeros.</div>
+              </div>
+              <div class="col-md-8">
+                <label class="form-label" for="endereco">Endereco *</label>
+                <input type="text" class="form-control" id="endereco" name="endereco"
+                       placeholder="Rua, numero, bairro" required>
+                <div class="invalid-feedback">Informe o endereco para a tele-busca ou o cadastro.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" name="cep" placeholder="90000-000">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="telefone">Telefone / WhatsApp *</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone"
+                       placeholder="(51) 99000-0000" required>
+                <div class="invalid-feedback">Informe um telefone para contato.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="email">E-mail *</label>
+                <input type="email" class="form-control" id="email" name="email"
+                       placeholder="voce@email.com" required>
+                <div class="invalid-feedback">Informe um e-mail valido, com @ e dominio.</div>
+              </div>
+              <fieldset class="col-12">
+                <legend class="form-label mb-1">Sexo</legend>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexo-f" value="feminino">
+                  <label class="form-check-label" for="sexo-f">Feminino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexo-m" value="masculino">
+                  <label class="form-check-label" for="sexo-m">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexo-o" value="prefiro-nao-informar" checked>
+                  <label class="form-check-label" for="sexo-o">Prefiro nao informar</label>
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <fieldset class="col-12 mt-4">
+            <legend class="h4 secao-titulo">Dados do pet</legend>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="pet">Nome do pet *</label>
+                <input type="text" class="form-control" id="pet" name="pet" placeholder="Ex.: Bidu" required>
+                <div class="invalid-feedback">Informe o nome do pet.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="especie">Especie *</label>
+                <select class="form-select" id="especie" name="especie" required>
+                  <option value="">Selecione</option>
+                  <option value="cao">Cao</option>
+                  <option value="gato">Gato</option>
+                </select>
+                <div class="invalid-feedback">Escolha a especie do pet.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="raca">Raca *</label>
+                <input type="text" class="form-control" id="raca" name="raca"
+                       placeholder="Ex.: Poodle ou SRD" required>
+                <div class="invalid-feedback">Informe a raca ou escreva SRD.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="idade">Idade (anos) *</label>
+                <input type="number" class="form-control" id="idade" name="idade"
+                       min="0" max="30" step="1" placeholder="Ex.: 3" required>
+                <div class="invalid-feedback">Informe a idade em anos, de 0 a 30.</div>
+              </div>
+              <fieldset class="col-md-8">
+                <legend class="form-label mb-1">Porte do pet *</legend>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="porte" id="porte-p" value="pequeno" required>
+                  <label class="form-check-label" for="porte-p">Pequeno (ate 10 kg)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="porte" id="porte-m" value="medio">
+                  <label class="form-check-label" for="porte-m">Medio (11 a 25 kg)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="porte" id="porte-g" value="grande">
+                  <label class="form-check-label" for="porte-g">Grande (acima de 25 kg)</label>
+                </div>
+                <div class="invalid-feedback d-block" data-erro-porte></div>
+              </fieldset>
+              <div class="col-12">
+                <label class="form-label" for="observacoes">Observacoes sobre o pet</label>
+                <textarea class="form-control" id="observacoes" name="observacoes" rows="2"
+                          placeholder="Alergias, medo de secador, medicacoes..."></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="col-12 mt-4">
+            <legend class="h4 secao-titulo">Servico e agendamento</legend>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="servico">Servico desejado *</label>
+                <select class="form-select" id="servico" name="servico" required>
+                  <option value="">Selecione o servico</option>
+                  <option value="banho">Banho</option>
+                  <option value="tosa">Tosa</option>
+                  <option value="banho-tosa">Banho e tosa</option>
+                </select>
+                <div class="invalid-feedback">Escolha o servico desejado.</div>
+              </div>
+              <fieldset class="col-md-6">
+                <legend class="form-label mb-1">Forma de atendimento *</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="atendimento" id="atend-loja"
+                         value="entrega-local" checked required>
+                  <label class="form-check-label" for="atend-loja">Entrego o pet na loja</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="atendimento" id="atend-tele" value="tele-busca">
+                  <label class="form-check-label" for="atend-tele">Quero tele-busca (buscar e devolver em casa)</label>
+                </div>
+              </fieldset>
+              <div class="col-md-6">
+                <label class="form-label" for="data">Data do atendimento *</label>
+                <input type="date" class="form-control" id="data" name="data" required
+                       aria-describedby="aviso-data">
+                <div id="aviso-data" class="form-text" data-aviso-data></div>
+                <div class="invalid-feedback">Escolha uma data de segunda a sabado, dentro dos proximos 60 dias.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="hora">Horario *</label>
+                <select class="form-select" id="hora" name="hora" required disabled>
+                  <option value="">Escolha primeiro a data</option>
+                </select>
+                <div class="invalid-feedback">Escolha um horario disponivel.</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="lembrete" name="lembrete" value="sim" checked>
+                  <label class="form-check-label" for="lembrete">
+                    Quero receber lembrete por WhatsApp na vespera do atendimento
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="termos" name="termos" value="sim" required>
+                  <label class="form-check-label" for="termos">
+                    Confirmo que os dados informados estao corretos *
+                  </label>
+                  <div class="invalid-feedback">E necessario confirmar os dados antes de agendar.</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="col-12 mt-4 d-flex gap-2 flex-wrap">
+            <button type="submit" class="btn btn-lg text-white" style="background-color: var(--verde);">
+              Confirmar agendamento
+            </button>
+            <button type="reset" class="btn btn-lg btn-outline-secondary">Limpar formulario</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-4">
+        <aside class="card shadow-sm sticky-lg-top" style="top: 1rem;" aria-label="Valor estimado do atendimento">
+          <div class="card-body">
+            <h2 class="h5">Valor estimado</h2>
+            <p class="display-6 mb-1" data-valor-estimado aria-live="polite">Selecione o servico e o porte do pet.</p>
+            <p class="text-muted" data-detalhe-valor></p>
+            <hr>
+            <p class="small mb-0">
+              O valor e uma estimativa e pode mudar conforme o estado do pelo do animal.
+              A confirmacao final e feita por telefone ou WhatsApp.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="resumo-agendamento" class="alert alert-success mt-4 d-none" role="status" tabindex="-1">
+      <h2 class="h4">Agendamento registrado</h2>
+      <p>Guarde o numero de protocolo. Nossa equipe confirma o horario em ate 2 horas uteis.</p>
+      <ul class="list-group list-group-flush" data-corpo-resumo></ul>
+    </section>
+  </section>
+</main>
+
+<footer class="rodape mt-5 py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2 class="h5">Pata &amp; Companhia Petshop</h2>
+        <p class="mb-1">CNPJ 12.345.678/0001-90</p>
+        <p class="mb-1">Rua das Acacias, 250 - Bairro Petropolis</p>
+        <p class="mb-0">Porto Alegre/RS - CEP 90000-000</p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Atendimento</h2>
+        <p class="mb-1">Segunda a sexta: 8h as 19h</p>
+        <p class="mb-1">Sabado: 8h as 14h</p>
+        <p class="mb-1">Telefone: (51) 3000-1234</p>
+        <p class="mb-0"><a href="mailto:contato@patacompanhia.com.br">contato@patacompanhia.com.br</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2 class="h5">Navegacao</h2>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Servicos</a></li>
+          <li><a href="agendamento.html">Agendamento</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="mb-1 small">Precos e condicoes validos apenas para este trabalho academico. Imagens meramente ilustrativas.</p>
+    <p class="mb-0 small">&copy; <span data-ano>2026</span> Pata &amp; Companhia Petshop. Projeto academico da disciplina Fundamentos de Sistemas Web - PUCRS. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/agendamento.js"></script>
+</body>
+</html>
