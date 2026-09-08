@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
-    atualizarHorarios();
+    // O horario nao e recalculado aqui: refazer a lista apagaria a escolha do usuario.
     const total = atualizarValor();
 
     if (!formulario.checkValidity()) {
